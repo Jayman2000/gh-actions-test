@@ -9,6 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2  # checkout v2.x.x (latest version)
 
-        # Now that this repo gets fetched, this should work.
       - name: Build
         run: ./build.sh
+
+      - name: Push to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages
+          folder: build
