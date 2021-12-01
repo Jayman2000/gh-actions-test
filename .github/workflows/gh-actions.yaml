@@ -6,6 +6,9 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      # I’m guessing that this will fail because it hasn’t checked out the repo.
+      - name: Checkout
+        uses: actions/checkout@v2  # checkout v2.x.x (latest version)
+
+        # Now that this repo gets fetched, this should work.
       - name: Build
         run: ./build.sh
