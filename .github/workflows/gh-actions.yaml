@@ -1,0 +1,11 @@
+---
+name: GitHub Actions
+on: push
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      # I’m guessing that this will fail because it hasn’t checked out the repo.
+      - name: Build
+        run: ./build.sh
